@@ -13,6 +13,19 @@
         </header>
         <form id="taskForm">
             <input type="text" id="taskInput" placeholder="Task description" required>
+            <select id="categorySelect" required>
+                <option value="">Select Category</option>
+                <option value="Work">Work</option>
+                <option value="Personal">Personal</option>
+                <option value="Study">Study</option>
+            </select>
+            <select id="prioritySelect" required>
+                <option value="">Select Priority</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+            <button type="submit">Add Task</button>
         </form>
         <div class="task-sections">
             <div class="pending-tasks">
