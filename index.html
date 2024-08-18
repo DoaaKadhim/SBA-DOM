@@ -8,7 +8,22 @@
 </head>
 <body>
     <div class="container">
-     
+        <header>
+            <h1>To-Do List</h1>
+        </header>
+        <form id="taskForm">
+            <input type="text" id="taskInput" placeholder="Task description" required>
+        </form>
+        <div class="task-sections">
+            <div class="pending-tasks">
+                <h2>Pending Tasks</h2>
+                <ul id="taskList" class="task-list"></ul>
+            </div>
+            <div class="completed-tasks">
+                <h2>Completed Tasks</h2>
+                <ul id="completedList"></ul>
+            </div>
+        </div>
     </div>
     <script src="javascript.js"></script>
 </body>
