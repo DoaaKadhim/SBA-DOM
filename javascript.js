@@ -95,6 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('tasks', tasks);
     }
 
+    //restore task from the storage
     function loadTasksFromLocalStorage() {
         const tasks = localStorage.getItem('tasks');
         if (tasks) {
@@ -109,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     loadTasksFromLocalStorage();
 
-    // CSS class modification example
+    // apply additional CSS styling to all task items.
     document.querySelectorAll('.task-item').forEach(item => {
         item.classList.add('enhanced-task');
     });
