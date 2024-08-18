@@ -32,7 +32,6 @@ header h1 {
     margin: 0;
 }
 
-/* Form styling */
 form {
     display: flex;
     flex-wrap: wrap;
