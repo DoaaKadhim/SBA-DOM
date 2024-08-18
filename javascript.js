@@ -82,4 +82,35 @@ document.addEventListener('DOMContentLoaded', () => {
         themeToggle.textContent = document.body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
     });
 
+    // logs the full URL of the current webpage to the console.
+    console.log(window.location.href); 
+    console.log(navigator.userAgent); 
+
+    function saveTasksToLocalStorage() {
+        const tasks = Array.from(taskList.children).map(taskItem => {
+            const text = taskItem.querySelector('span').textContent;
+            const status = taskItem.classList.contains('completed') ? 'Completed' : 'Pending';
+            return `${text} - ${status}`;
+        }).join('|');
+        localStorage.setItem('tasks', tasks);
+    }
+
+    function loadTasksFromLocalStorage() {
+        const tasks = localStorage.getItem('tasks');
+        if (tasks) {
+            tasks.split('|').forEach(taskString => {
+                const [text, status] = taskString.split(' - ');
+                const [taskText, categoryPriority] = text.split(' [');
+                const [category, priority] = categoryPriority.replace(']', '').split(' - ');
+                addTask(taskText, category, priority, status);
+            });
+        }
+    }
+
+    loadTasksFromLocalStorage();
+
+    // CSS class modification example
+    document.querySelectorAll('.task-item').forEach(item => {
+        item.classList.add('enhanced-task');
+    });
 });
